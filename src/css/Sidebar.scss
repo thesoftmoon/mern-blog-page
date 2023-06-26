@@ -1,0 +1,25 @@
+.sidebar-container {
+    width: 300px;
+    float: right;
+    margin-right: 50px;
+}
+
+.new-article {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 40px 30px;
+    margin-top: 50px;
+    hr {
+        margin-bottom: 40px;
+    }
+}
+
+.search-container {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 40px 30px;
+    margin-top: 50px;
+    .search-bar {
+        margin-bottom: 30px;
+    }
+}

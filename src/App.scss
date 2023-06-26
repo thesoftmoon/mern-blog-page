@@ -7,10 +7,45 @@
     color: #fff;
     text-transform: uppercase;
     transition: 0.4s ease;
+
     &:hover {
         color: #000000;
         background-color: transparent;
         border: 1px solid #000000;
         box-shadow: none;
+    }
+}
+
+.positive-action-btn {
+    background-color: rgb(67, 185, 75);
+    text-decoration: none;
+    padding: 18px 25px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #0000003c;
+    color: #fff;
+    text-transform: uppercase;
+    transition: 0.4s ease;
+
+    &:hover {
+        color: #000000;
+        background-color: transparent;
+        border: 1px solid rgb(67, 185, 75);
+        box-shadow: none;
+    }
+}
+
+
+.footer-container {
+    margin-top: 20px;
+    height: 40px;
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        font-size: 13px;
+        margin-bottom: 0px;
+
     }
 }
