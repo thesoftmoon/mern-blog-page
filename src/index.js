@@ -8,8 +8,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Test from './pages/Test';
-import Error from './pages/Error';
+import TestPage from './pages/Test';
+import ErrorPage from './pages/Error';
+import FormPage from './pages/Form';
 
 const router = createBrowserRouter([
   {
@@ -18,11 +19,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/test",
-    element: <Test />,
+    element: <TestPage />,
   },
   {
+    path: "/formulario",
+    element: <FormPage />,
+  },
+  
+  {
     path: "*",
-    element: <Error />,
+    element: <ErrorPage />,
   },
 ]);
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../css/Navbar.scss";
+import { Link } from "react-router-dom";
 export class navbar extends Component {
   render() {
     return (
@@ -14,21 +15,11 @@ export class navbar extends Component {
                 />
               </div>
               <div className="nav-items">
-                <a className="links" href="#">
-                  Inicio
-                </a>
-                <a className="links" href="#">
-                  Blog
-                </a>
-                <a className="links" href="#">
-                  Formulario
-                </a>
-                <a className="links" href="#">
-                  Pagina 1
-                </a>
-                <a className="links" href="#">
-                  Pagina 2
-                </a>
+                <Link to='/' className="links">Inicio</Link>
+                <Link to='/test' className="links">Blog</Link>
+                <Link to='/formulario' className="links">Formulario</Link>
+                <Link to='/' className="links">Pagina 1</Link>
+                <Link to='/' className="links">Pagina 2</Link>
               </div>
             </div>
           </div>
