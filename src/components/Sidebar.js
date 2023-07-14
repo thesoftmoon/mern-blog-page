@@ -15,7 +15,7 @@ export class Sidebar extends Component {
             <h3>Buscador</h3>
             <hr/>
             <div className="search-bar">
-                <label for="exampleInputEmail1" className="form-label">Encuentra el articulo que buscas</label>
+                <label htmlFor="exampleInputEmail1" className="form-label">Encuentra el articulo que buscas</label>
                 <input type="text" className="form-control" id="exampleInputEmail1"/>
             </div>
             <a href='#' className='main-btn'>Crear Artículo</a>

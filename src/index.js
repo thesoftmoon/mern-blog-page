@@ -8,9 +8,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import TestPage from './pages/Test';
 import ErrorPage from './pages/Error';
 import FormPage from './pages/Form';
+import BlogPage from './pages/Blog';
 
 const router = createBrowserRouter([
   {
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/test",
-    element: <TestPage />,
+    path: "/blog",
+    element: <BlogPage />,
   },
   {
     path: "/formulario",

@@ -16,7 +16,7 @@ export class navbar extends Component {
               </div>
               <div className="nav-items">
                 <Link to='/' className="links">Inicio</Link>
-                <Link to='/test' className="links">Blog</Link>
+                <Link to='/blog' className="links">Blog</Link>
                 <Link to='/formulario' className="links">Formulario</Link>
                 <Link to='/' className="links">Pagina 1</Link>
                 <Link to='/' className="links">Pagina 2</Link>
