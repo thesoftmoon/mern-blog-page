@@ -5,7 +5,7 @@ import Layout from '../layout/Layout';
 function Home() {
   return (
     <Layout mainHeading="hola mundo" mainText="hola amigos" activeBtn='true'>
-      <Articles home='true'/>
+      <Articles home='true' lastArticles='true'/>
     </Layout>
   );
 }
