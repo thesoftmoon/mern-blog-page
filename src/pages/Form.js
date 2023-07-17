@@ -37,7 +37,7 @@ export class Form extends Component {
   };
   render() {
     return (
-      <Layout>
+      <Layout mainHeading="pagina formulario" mainText="Completa o prueba el formulario">
         <div className="container mt-5">
           <div className="row mb-4">
             <div className="col-12 text-center">

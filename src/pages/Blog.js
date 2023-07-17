@@ -7,7 +7,7 @@ export class Blog extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout mainHeading='Blog' mainText='Hola mundo' activeBtn='false' sectionSlider='true'>
         <Articles/>
       </Layout>
     )

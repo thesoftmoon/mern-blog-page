@@ -3,22 +3,42 @@ import axios from 'axios';
 import Global from '../Global';
 import Moment from 'react-moment';
 import 'moment/locale/es';
-import defaultImage from '../assets/default-image.jpg'
+import defaultImage from '../assets/default-image.jpg';
+import { Link } from 'react-router-dom';
 
 export class Articles extends Component {
 
     url = Global.url;
 
-    componentDidMount(){
-        this.getArticles();
-    }
-
     state =  {
         articles: {},
         status: null
     }
+
+    componentDidMount(){
+        let home = this.props.home;
+
+        if(home === 'true'){
+            this.getLastArticles();
+        }else {
+            this.getArticles();
+        }
+    }
+
+    
     getArticles = () => {
         axios.get(this.url+"articles/")
+        .then(res => {
+            console.log(res.data);
+            this.setState({
+                articles: res.data.articles,
+                status: 'success'
+            })
+        });
+    }
+
+    getLastArticles = () => {
+        axios.get(this.url+"articles/last")
         .then(res => {
             console.log(res.data);
             this.setState({
@@ -44,10 +64,7 @@ export class Articles extends Component {
                 <div className='txt'>
                     <h5>{article.title}</h5>
                     <p>Lorem ipsum</p>
-                    <a href='/#'>Leer más</a>
-                    <div>
-                        <button>Marcar como favorita</button>
-                    </div>
+                    <Link to={'/blog/articulo/'+article._id}>Leer Más</Link>
                     <hr/>
                     <p className='time'><Moment fromNow>{article.date}</Moment></p>
                 </div>

@@ -1,5 +1,28 @@
 .slider-container {
+    margin-top: 70px;
     min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
+    .txt-container {
+        text-align: center;
+        h1 {
+            color: #fff;
+        }
+        p{
+            color: #fff;
+            margin-bottom: 35px;
+        }
+    }
+
+}
+
+.slider-container-small {
+    margin-top: 70px;
+    min-height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
