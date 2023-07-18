@@ -5,6 +5,7 @@ import ErrorPage from './pages/Error';
 import FormPage from './pages/Form';
 import BlogPage from './pages/Blog';
 import SearchPage from './pages/Search';
+import ArticlePage from './pages/Article';
 
 export default function App() {
     function GetParamsRedirect(){
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/blog/search/:search" element={<SearchPage />} />
         <Route path="/blog/redirect/:search" element={<GetParamsRedirect/>} />
         <Route path="/formulario" element={<FormPage />} />
+        <Route path="/article" element={<ArticlePage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
   )
