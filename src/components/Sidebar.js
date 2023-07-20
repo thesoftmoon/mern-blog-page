@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../css/Sidebar.scss'
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 
 export class Sidebar extends Component {
 
@@ -30,7 +30,7 @@ export class Sidebar extends Component {
         <div className='new-article'>
             <h3>Puedes hacer esto</h3>
             <hr/>
-            <a href='#' className='positive-action-btn'>Crear Artículo</a>
+            <Link replace to={'/blog/crear'} className='positive-action-btn'>Crear Artículo</Link>
         </div>
 
         <div className='search-container'>

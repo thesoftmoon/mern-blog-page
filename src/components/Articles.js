@@ -80,7 +80,7 @@ export class Articles extends Component {
 
         let listArticle = this.state.articles.map((article)=>{
             return(
-                <div className='movie-container'>
+                <div key={article._id} className='movie-container'>
                     {article.image !== null ?(
                         <img src={this.url+'get-image/'+article.image} alt={article.title}/>
                     ):(

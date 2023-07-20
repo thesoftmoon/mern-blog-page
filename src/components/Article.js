@@ -1,45 +1,85 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import Global from '../Global';
+import Moment from 'react-moment';
+import 'moment/locale/es';
+import defaultImage from '../assets/default-image.jpg';
 
-export class Article extends Component {
-  render() {
+const url = Global.url;
+
+
+function Article() {
+  //Here you consume the url parameter defined in reac router dom page setup
+  const { id } = useParams();
+  const [article, setArticle] = React.useState(null);
+  React.useEffect(()=>{
+    axios.get(url + 'article/' + id)
+      .then(res =>{
+        //here you set the article data to the state
+        setArticle(res.data.article);
+      })
+      .catch(err =>{
+        setArticle(false);
+      });
+  }, [id]);
+
+
+  if (article == null) {
     return (
-      <div className="container mt-5">
+      <div className='container mt-5'>
+                <div className="row mb-4">
+                    <div className="col-12 text-center">
+                        <h1>Cargando...</h1>
+                        <p>Espere que se cargue el articulo</p>
+                        <hr />
+                    </div>
+                </div>
+                <div className='clearfix'></div>
+      </div>
+    )
+  }
+
+  if (article === false) {
+    return (
+      <div className='container mt-5'>
+                <div className="row mb-4">
+                    <div className="col-12 text-center">
+                        <h1>El articulo no existe</h1>
+                        <p>Aun no existe contenido en esta sección</p>
+                        <hr />
+                    </div>
+                </div>
+                <div className='clearfix'></div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="container mt-5">
         <div className="row mb-4">
           <div className="col-12 text-center article-container">
-            <img
-              className="article-img"
-              src="https://scriptshadow.net/wp-content/uploads/2013/08/elysium-teaser_77-930x384.jpg"
-              alt="pelicula"
-            />
-
+            {article.image !== null ?(
+                          <img className="article-img" src={url+'get-image/'+article.image} alt={article.title}/>
+                      ):(
+                          <img className="article-img" src={defaultImage} alt={article.title}/>
+                      )}
             <div className="article-title">
-              <h1>Titulo del articulo</h1>
-              <p>Hace 5 minutos</p>
+              <h1>{article.title}</h1>
+              <p><Moment fromNow>{article.date}</Moment></p>
             </div>
 
             <div className="col-10 body-text-container">
               <p>
-                Lorem ipsum dolor sit amet. Aut repellendus dolorem et
-                consequatur possimus ab incidunt debitis! Et possimus vero At
-                totam deserunt est omnis nihil sit illum velit non culpa
-                corporis? Ut odit iste ea cupiditate iure est eius quod aut enim
-                nulla At velit cupiditate ut odit ipsam quo esse modi! Qui
-                adipisci internos aut minima praesentium qui soluta tempore hic
-                itaque earum aut nulla quod sed expedita delectus et esse
-                cumque? Et atque harum et quia placeat et vitae inventore non
-                animi rerum At dolor galisum vel natus eius et autem assumenda.
-                In fugiat deserunt aut alias quibusdam in illum voluptatum. Et
-                itaque consequatur ut libero veritatis non consequatur dicta aut
-                illo sapiente. Et labore optio ut natus enim nam internos
-                consequatur id eius perferendis.
+                {article.content}
               </p>
             </div>
             
           </div>
         </div>
+        <div className='clearfix'></div>
       </div>
-    );
-  }
+  )
 }
 
-export default Article;
+export default Article
