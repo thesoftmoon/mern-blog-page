@@ -89,7 +89,7 @@ export class Articles extends Component {
                 
                 <div className='txt'>
                     <h5>{article.title}</h5>
-                    <p>Lorem ipsum</p>
+                    <p>{article.content}</p>
                     <Link to={'/blog/articulo/'+article._id}>Leer Más</Link>
                     <hr/>
                     <p className='time'><Moment fromNow>{article.date}</Moment></p>

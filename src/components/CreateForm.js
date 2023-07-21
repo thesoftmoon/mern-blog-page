@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Global from "../Global";
 import { Navigate } from "react-router-dom";
+import SimpleReactValidator from "simple-react-validator";
+import Swal from "sweetalert2";
+
+
 
 function CreateForm() {
   const [formData, setFormData] = useState({
@@ -13,6 +17,15 @@ function CreateForm() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [article, setArticle] = useState();
 
+
+  
+  const validator = useRef(new SimpleReactValidator({
+    messages: {
+      required: 'Debes rellenar este campo antes de enviar',
+      alpha_num_space: 'Debe contener solo letras, numeros y espacios',
+    },
+  }));
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,6 +33,8 @@ function CreateForm() {
     });
     console.log(formData);
   };
+
+
   //here useEffect watch for changes in article state
   useEffect(() => {
     if (status === "waiting" && article && selectedFile !== null) {
@@ -47,29 +62,46 @@ function CreateForm() {
     }
   }, [status, article, selectedFile]);
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = Global.url;
 
-    axios
-      .post(url + "save/", formData)
-      .then((res) => {
-        if (res.data.article) {
-          console.log("Datos guardados con éxito:", res.data);
-          setArticle(res.data.article);
-          setStatus("waiting");
+      if(validator.current.allValid()){
 
-          if (selectedFile !== null) {
-          } else {
-            setStatus("success");
-          }
-        }
-      })
-      .catch((err) => {
-        console.error("Error al guardar los datos:", err);
-        setStatus("error");
-      });
+        const url = Global.url;
+    
+        axios
+          .post(url + "save/", formData)
+          .then((res) => {
+            if (res.data.article) {
+              console.log("Datos guardados con éxito:", res.data);
+              setArticle(res.data.article);
+              setStatus("waiting");
+              Swal.fire(
+                'Articulo creado',
+                'Articulo guardado correctamente',
+                'success'
+              )
+    
+              if (selectedFile !== null) {
+              } else {
+                setStatus("success");
+              }
+            }
+          })
+          .catch((err) => {
+            console.error("Error al guardar los datos:", err);
+            setStatus("error");
+          });
+      } else {
+        validator.current.showMessages();
+        setStatus('error');
+      }
+    
+    
   };
+
 
   const fileChange = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -102,6 +134,7 @@ function CreateForm() {
                 onChange={handleChange}
               />
               <label htmlFor="floatingInput">Titulo del articulo</label>
+              {validator.current.message('title', formData.title, 'required|alpha_num_space')}
             </div>
             <div className="form-floating mb-3">
               <textarea
@@ -114,6 +147,8 @@ function CreateForm() {
                 onChange={handleChange}
               ></textarea>
               <label htmlFor="floatingTextarea2">Contenido del articulo</label>
+              {validator.current.message('content', formData.content, 'required')}
+
             </div>
 
             <div className="mb-3">

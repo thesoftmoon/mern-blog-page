@@ -16,6 +16,8 @@
     "react-scripts": "5.0.1",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
+    "simple-react-validator": "^1.6.2",
+    "sweetalert2": "^11.7.18",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
