@@ -5,13 +5,13 @@ import Global from "../Global";
 import Moment from "react-moment";
 import "moment/locale/es";
 import defaultImage from "../assets/default-image.jpg";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const url = Global.url;
 
 function Article() {
-  //Here you consume the url parameter defined in reac router dom page setup
+  //Here you consume the url parameter defined in react router dom page setup
   const { id } = useParams();
   const [article, setArticle] = useState(null);
   const [status, setStatus] = useState(null);
@@ -129,7 +129,7 @@ function Article() {
             >
               Eliminar
             </button>
-            <button className="btn middle mx-3">Editar</button>
+            <Link to={'/blog/editar/' + article._id} className='btn middle mx-3'>Editar</Link>
           </div>
         </div>
       </div>
