@@ -26,7 +26,7 @@ export class Sidebar extends Component {
       );
     }
     return (
-      <div className='sidebar-container'>
+      <div className='sidebar-container d-none d-md-block'>
         <div className='new-article'>
             <h3>Puedes hacer esto</h3>
             <hr/>
