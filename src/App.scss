@@ -139,3 +139,18 @@
     }
 }
 
+
+.image-slider-container {
+    position: relative;
+    margin-top: 68px;
+    height: 75vh;
+    .slider-txt {
+        position: absolute;
+        bottom: 175px;
+        left: 50px;
+        width: 40%;
+        color: #fff;
+        pointer-events: all;
+    }
+}
+

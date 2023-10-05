@@ -3,11 +3,13 @@ import Slider from '../components/Slider';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import ImageSlider from '../components/ImageSlider';
 
 function Layout(props) {
   return (
     <div>
         <Navbar/>
+        <ImageSlider/>
         <Slider
           mainHeading={props.mainHeading}
           mainText={props.mainText} 
