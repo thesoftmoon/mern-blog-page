@@ -1,5 +1,6 @@
 .navbar-container {
-    background-color: black;
+    background: linear-gradient(rgba(0,0,0,.4),transparent);
+    transition: .5s ease;
     min-height: 70px;
     position: fixed;
     width: 100%;
@@ -19,4 +20,8 @@
             transition: 0.4s ease-in-out;
         }
     }
+}
+
+.scrolled {
+    background-color: #1b1b1b;
 }

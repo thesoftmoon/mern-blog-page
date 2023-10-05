@@ -1,10 +1,20 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "../css/Navbar.scss";
 import { Link } from "react-router-dom";
-export class navbar extends Component {
-  render() {
-    return (
-      <div className="navbar-container">
+
+function Navbar(){
+  const [scrolled, setScrolled] = useState();
+  
+  const navBarChange = ()=>{
+    if (window.scrollY >= 180) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  }
+  window.addEventListener("scroll", navBarChange);
+  return (
+<div className={!scrolled ? 'navbar-container':'navbar-container scrolled'}>
         <div className="container">
           <div className="row">
             <div className="col-12 d-flex align-items-center justify-content-between">
@@ -46,8 +56,7 @@ export class navbar extends Component {
           </div>
         </div>
       </div>
-    );
-  }
+  )
 }
 
-export default navbar;
+export default Navbar;
