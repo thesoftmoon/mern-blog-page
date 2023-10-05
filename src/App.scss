@@ -142,8 +142,8 @@
 
 .image-slider-container {
     position: relative;
-    /* margin-top: 68px; */
-    height: 75vh;
+    height: 100vh;
+    overflow: hidden;
     .slider-txt {
         position: absolute;
         bottom: 175px;
