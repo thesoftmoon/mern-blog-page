@@ -4,9 +4,19 @@ import Layout from '../layout/Layout';
 
 function Home() {
   return (
-    <Layout mainHeading="Bienvenido al nuevo blog" mainText="Un espacio para conocer las ultimas noticias y artículos del medio" activeBtn='true'>
-      <Articles home='true' lastArticles='true'/>
+    <Layout moImage={require(`../assets/img/test-img-mo.jpg`)}
+      pcImage={require(`../assets/img/test-img-pc.jpg`)}
+      title={'Hello World'}
+      text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, repellendus.'}
+      btn={true}
+      btnLink={'/blog'}
+    >
+      <Articles
+        home='true'
+        lastArticles='true'
+      />
     </Layout>
+
   );
 }
 

@@ -4,8 +4,14 @@ import CreateForm from '../components/CreateForm';
 
 function CreateArticle() {
   return (
-    <Layout mainHeading='Crear articulo' mainText='Acá puedes crear un nuevo articulo' sectionSlider='true'>
-        <CreateForm/>
+    <Layout
+      moImage={require(`../assets/img/test-img-mo.jpg`)}
+      pcImage={require(`../assets/img/test-img-pc.jpg`)}
+      sliderSize={'small'}
+      title={'Hello World'}
+      text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, repellendus.'}
+    >
+      <CreateForm />
     </Layout>
   )
 }

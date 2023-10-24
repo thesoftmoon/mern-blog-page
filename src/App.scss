@@ -139,45 +139,27 @@
     }
 }
 
-
-.image-slider-container {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    .slider-txt {
-        position: absolute;
-        bottom: 175px;
-        left: 50px;
-        width: 40%;
-        color: #fff;
-        pointer-events: all;
-    }
-}
-
-.slider-btn {
+.rainbow-btn {
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: 10px;
     color: #000;
     cursor: pointer;
-    padding: 15px 30px;
+    padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px;
     border: none;
     text-decoration: none;
-    margin-top: 20px;
+
     &:hover {
         background-image: linear-gradient(90deg, #53cbef 0%, #dcc66c 50%, #ffa3b6 75%, #53cbef 100%);
         animation: slidernbw 5s linear infinite;
         color: #000;
     }
+
     @keyframes slidernbw {
         to {
-         background-position: 20vw;
+            background-position: 20vw;
         }
-       }
-   }
-   
-   
-   
-
+    }
+}

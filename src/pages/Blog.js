@@ -7,8 +7,14 @@ export class Blog extends Component {
 
   render() {
     return (
-      <Layout mainHeading='Blog' mainText='Hola mundo' sectionSlider='true'>
-        <Articles/>
+      <Layout
+        moImage={require(`../assets/img/test-img-mo.jpg`)}
+        pcImage={require(`../assets/img/test-img-pc.jpg`)}
+        sliderSize={'small'}
+        title={'Hello World'}
+        text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, repellendus.'}
+      >
+        <Articles />
       </Layout>
     )
   }

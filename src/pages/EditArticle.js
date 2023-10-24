@@ -4,10 +4,16 @@ import EditForm from '../components/EditForm';
 
 function EditArticle() {
   return (
-    <Layout mainHeading='Edita el articulo' mainText='Acá puedes editar el articulo' sectionSlider='true'>
-        <EditForm/>
+    <Layout
+      moImage={require(`../assets/img/test-img-mo.jpg`)}
+      pcImage={require(`../assets/img/test-img-pc.jpg`)}
+      sliderSize={'small'}
+      title={'Hello World'}
+      text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, repellendus.'}
+      >
+      <EditForm />
     </Layout>
-    )
+  )
 }
 
 export default EditArticle

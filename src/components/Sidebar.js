@@ -20,27 +20,27 @@ export class Sidebar extends Component {
 
   }
   render() {
-    if(this.state.redirect){
-      return(
-        <Navigate replace to={'/blog/redirect/'+this.state.search}/>
+    if (this.state.redirect) {
+      return (
+        <Navigate replace to={'/blog/redirect/' + this.state.search} />
       );
     }
     return (
       <div className='sidebar-container d-none d-md-block'>
         <div className='new-article'>
-            <h3>Puedes hacer esto</h3>
-            <hr/>
-            <Link replace to={'/blog/crear'} className='positive-action-btn'>Crear Artículo</Link>
+          <h3>Puedes hacer esto</h3>
+          <hr />
+          <Link replace to={'/blog/crear'} className='positive-action-btn'>Crear Artículo</Link>
         </div>
 
         <div className='search-container'>
-            <h3>Buscador</h3>
-            <hr/>
-            <form onSubmit={this.redirectToSearch} className="search-bar">
-                <label htmlFor="exampleInputEmail1" className="form-label">Encuentra el articulo que buscas</label>
-                <input type="text" className="form-control" id="exampleInputEmail1" ref={this.searchRef}/>
-                <button type="submit" className='main-btn mt-4'>Buscar articulos</button>
-            </form>
+          <h3>Buscador</h3>
+          <hr />
+          <form onSubmit={this.redirectToSearch} className="search-bar">
+            <label htmlFor="exampleInputEmail1" className="form-label">Encuentra el articulo que buscas</label>
+            <input type="text" className="form-control" id="exampleInputEmail1" ref={this.searchRef} />
+            <button type="submit" className='main-btn mt-4'>Buscar articulos</button>
+          </form>
         </div>
       </div>
     )
