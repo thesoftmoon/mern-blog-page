@@ -196,8 +196,8 @@ function EditForm() {
                   />
                 </div>
     
-                <div className="mb-3">
-                  <button type="submit" className="btn btn-primary">
+                <div className="mb-3 d-flex justify-content-center">
+                  <button type="submit" className="primary-btn">
                     Enviar
                   </button>
                 </div>

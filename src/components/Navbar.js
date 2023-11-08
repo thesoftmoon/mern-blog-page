@@ -1,12 +1,14 @@
 import React, { useRef, useState } from "react";
 import "../css/Navbar.scss";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation().pathname;
+
   const [scrolled, setScrolled] = useState();
   const [search, setSearch] = useState('');
   const [redirect, setRedirect] = useState(false);
-  const  searchRef = useRef();
+  const searchRef = useRef();
 
   const redirectToSearch = (e) => {
     e.preventDefault();
@@ -28,6 +30,8 @@ function Navbar() {
       <Navigate replace to={'/blog/redirect/' + search} />
     );
   }
+
+
   return (
     <div className={!scrolled ? 'navbar-container' : 'navbar-container scrolled'}>
       <div className="container-fluid">
@@ -36,7 +40,7 @@ function Navbar() {
             <Link to="/" className="logo">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="154"
+                width="80"
                 height="50"
                 viewBox="0 0 154 100"
                 fill="none"
@@ -62,7 +66,7 @@ function Navbar() {
             <div className="nav-items">
               <form onSubmit={redirectToSearch}>
                 <div className="search">
-                  <input type="text" className="search__input" placeholder="Buscar..." ref={searchRef}/>
+                  <input type="text" className="search__input" placeholder="Buscar..." ref={searchRef} />
                   <button className="search__button" type="submit">
                     <svg className="search__icon" aria-hidden="true" viewBox="0 0 24 24">
                       <g>
@@ -72,9 +76,16 @@ function Navbar() {
                   </button>
                 </div>
               </form>
-              <Link to="/blog" className="links rainbow-btn">
-                Blog
-              </Link>
+              {location === '/blog' ?
+                (<Link to="/blog/crear" className="links rainbow-btn">
+                  Crear  <span className="ms-2 material-symbols-outlined">edit</span>
+                </Link>) : (
+                  <Link to="/blog" className="links rainbow-btn">
+                    Blog
+                  </Link>
+                )
+              }
+
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 const Global = {
-    url: 'https://mern-blog-page-api.onrender.com/api/'
+    url: 'http://localhost:3900/api/'
 }
 
 export default Global;

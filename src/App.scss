@@ -1,3 +1,17 @@
+@import './css/MediaQueries.scss';
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.main-app {
+    position: relative;
+}
+
 .main-btn {
     background-color: rgb(0, 0, 0);
     text-decoration: none;
@@ -76,6 +90,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: -48px;
+    right: 0;
+    left: 0;
+
     p {
         font-size: 13px;
         margin-bottom: 0px;
@@ -98,6 +117,17 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
+    @include md {
+        flex-direction: column;
+        align-items: start;
+        .txt {
+            margin-left: 0px!important;
+            margin-top: 20px;
+        }
+        img {
+            width: 100%!important;
+        }
+    }
     .txt {
         margin-left: 30px;
         max-width: 600px;
@@ -116,8 +146,8 @@
         }
     }
     img {
-        width: 200px;
-        height: 200px;
+        width: 350px;
+        height: 230px;
         object-fit: cover;
     }
 
@@ -161,5 +191,47 @@
         to {
             background-position: 20vw;
         }
+    }
+}
+
+.primary-btn {
+    background-color: #73c9ea;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 3px solid #73c9ea;
+    text-decoration: none;
+    transition: all .15s linear;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    &:hover {
+        background-color: #66b0ce;
+        border-color: #66b0ce;
+    }
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border-radius: 10px;
+    color: #73c9ea;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid #73c9ea;
+    text-decoration: none;
+    transition: all .15s linear;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    &:hover {
+        border-color: #66b0ce;
+        color: #66b0ce
     }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export class Footer extends Component {
   render() {
-    const pageName = 'Blog Page';
+    const pageName = 'Mern Blog Page';
     const currentYear = new Date().getFullYear();
     let mainFooterInfo = pageName + ' | ' + currentYear;
     return (

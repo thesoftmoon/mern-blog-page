@@ -6,7 +6,7 @@ import ImageSlider from '../components/ImageSlider';
 
 function Layout(props) {
   return (
-    <div>
+    <div className='main-app'>
       <Navbar />
       <ImageSlider
         moImage={props.moImage}
@@ -17,9 +17,8 @@ function Layout(props) {
         btn={props.btn}
         btnLink={props.btnLink}
       />
-      <Sidebar />
-      <div>{props.children}</div>
-      <div className='clearfix'></div>
+      {/* <Sidebar /> */}
+      <div className='mb-5'>{props.children}</div>
       <Footer />
     </div>
   )

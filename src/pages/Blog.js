@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Layout from '../layout/Layout';
 import Articles from '../components/Articles';
 
-
-export class Blog extends Component {
-
-  render() {
+function Blog(){
     return (
       <Layout
         moImage={require(`../assets/img/test-img-mo.jpg`)}
@@ -17,7 +14,7 @@ export class Blog extends Component {
         <Articles />
       </Layout>
     )
-  }
+  
 }
 
 export default Blog

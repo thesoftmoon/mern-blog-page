@@ -1,20 +1,23 @@
-import React, { Component } from 'react';
+import React,{useState} from 'react';
 import Layout from '../layout/Layout';
 import Article from '../components/Article';
 
-export class article extends Component {
-  render() {
+function ArticlePage(){
+    const [articleData, setArticleData] = useState({ title: '', content: '' });
+    // Here you catch thedata from child and set it to a local state
+    const onDataLoaded = (newData) => {
+      setArticleData(newData);
+    };
     return (
       <Layout
         moImage={require(`../assets/img/test-img-mo.jpg`)}
         pcImage={require(`../assets/img/test-img-pc.jpg`)}
         sliderSize={'small'}
-        title={'Hello World'}
-        text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, repellendus.'}>
-        <Article />
+        title={articleData.title}
+        text={articleData.content}>
+          {/* here you export the data from child to parent */}
+        <Article onDataLoaded={onDataLoaded} />
       </Layout>
     )
   }
-}
-
-export default article
+export default ArticlePage

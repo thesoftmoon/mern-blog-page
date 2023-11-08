@@ -1,3 +1,5 @@
+@import 'MediaQueries';
+
 .navbar-container {
     background: linear-gradient(rgba(0, 0, 0, .4), transparent);
     transition: .5s ease;
@@ -10,6 +12,22 @@
     align-items: center;
     z-index: 2;
 
+    .logo {
+        margin-left: 20px;
+
+        @include md {
+            margin-left: 0px;
+        }
+    }
+
+    .rainbow-btn {
+        @include md {
+            padding: 10px 15px;
+            font-size: 14px;
+            height: fit-content;
+        }
+    }
+
     .nav-items {
         display: flex;
 
@@ -17,6 +35,12 @@
             text-decoration: none;
             margin-right: 30px;
             transition: 0.4s ease-in-out;
+            display: flex;
+            align-items: center;
+
+            @include md {
+                margin-right: 0px;
+            }
         }
     }
 
@@ -48,6 +72,12 @@
     transition: all ease-in-out .5s;
     margin-right: -2.5rem;
     border: 1px solid #fff;
+
+    @include md {
+        width: 115px;
+        padding: 10px;
+        font-size: 14px;
+    }
 }
 
 .search__input:hover,

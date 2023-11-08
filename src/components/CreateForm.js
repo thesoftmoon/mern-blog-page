@@ -85,8 +85,11 @@ function CreateForm() {
               )
     
               if (selectedFile !== null) {
+                console.log('Imagen seleccionada');
               } else {
                 setStatus("success");
+                console.log('Imagen no seleccionada');
+                
               }
             }
           })
@@ -162,8 +165,8 @@ function CreateForm() {
               />
             </div>
 
-            <div className="mb-3">
-              <button type="submit" className="btn btn-primary">
+            <div className="mb-3 d-flex justify-content-center">
+              <button type="submit" className="primary-btn">
                 Enviar
               </button>
             </div>

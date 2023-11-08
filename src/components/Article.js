@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 const url = Global.url;
 
-function Article() {
+function Article({ onDataLoaded }) {
   //Here you consume the url parameter defined in react router dom page setup
   const { id } = useParams();
   const [article, setArticle] = useState(null);
@@ -22,11 +22,17 @@ function Article() {
       .then((res) => {
         //here you set the article data to the state
         setArticle(res.data.article);
+        //Here you  set the  data to send to parnt component
+        onDataLoaded({
+          title: res.data.article.title,
+          content: res.data.article.content,
+        });
       })
       .catch((err) => {
         setArticle(false);
       });
-  }, [id]);
+
+  }, [id], [onDataLoaded]);
 
   const deleteArticle = (_id) => {
     Swal.fire({
@@ -120,16 +126,16 @@ function Article() {
           <div className="col-10 body-text-container">
             <p>{article.content}</p>
           </div>
-          <div>
+          <div className="d-flex justify-content-center">
+            <Link to={'/blog/editar/' + article._id} className='primary-btn  m-2'>Editar<span class="material-symbols-outlined ms-2">edit</span></Link>
             <button
-              className="btn danger mx-3"
+              className="secondary-btn m-2"
               onClick={() => {
                 deleteArticle(article._id);
               }}
             >
-              Eliminar
+              Eliminar<span class="material-symbols-outlined ms-2">delete</span>
             </button>
-            <Link to={'/blog/editar/' + article._id} className='btn middle mx-3'>Editar</Link>
           </div>
         </div>
       </div>

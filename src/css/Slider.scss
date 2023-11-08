@@ -1,3 +1,5 @@
+@import 'MediaQueries';
+
 .slider-container {
     margin-top: 70px;
     min-height: 600px;
@@ -66,6 +68,10 @@
         width: 40%;
         color: #fff;
         pointer-events: all;
+        @include md {
+            bottom: 70px;
+            left: 30px;
+        }
     }
 }
 
