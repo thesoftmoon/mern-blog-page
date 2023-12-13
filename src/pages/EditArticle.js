@@ -8,8 +8,8 @@ function EditArticle() {
       moImage={require(`../assets/img/test-img-mo.jpg`)}
       pcImage={require(`../assets/img/test-img-pc.jpg`)}
       sliderSize={'small'}
-      title={'Hello World'}
-      text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, repellendus.'}
+      title={'Edita un articulo'}
+      text={'Modifica toda la información que necesites'}
       >
       <EditForm />
     </Layout>
