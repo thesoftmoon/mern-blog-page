@@ -8,8 +8,8 @@ function Blog(){
         moImage={require(`../assets/img/test-img-mo.jpg`)}
         pcImage={require(`../assets/img/test-img-pc.jpg`)}
         sliderSize={'small'}
-        title={'Hello World'}
-        text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, repellendus.'}
+        title={'Todos los artículos'}
+        text={'Acá puedes encontrar todas las entradas a la fecha'}
       >
         <Articles />
       </Layout>

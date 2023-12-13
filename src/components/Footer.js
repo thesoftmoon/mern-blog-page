@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../css/Footer.scss';
+
+const link = 'https://github.com/thesoftmoon';
 
 export class Footer extends Component {
+
   render() {
-    const pageName = 'Mern Blog Page';
-    const currentYear = new Date().getFullYear();
-    let mainFooterInfo = pageName + ' | ' + currentYear;
     return (
       <div className='footer-container'>
-        <span>{mainFooterInfo}</span>
+        <span className='link'>MERN Blog Page | Developed By <a href={link} target='_blank' rel='noreferrer'>Tomás Pacheco</a> in React</span>
       </div>
     )
   }
